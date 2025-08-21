@@ -1,0 +1,277 @@
+/* Solana MVP Dashboard Styles */
+
+:root {
+    --primary-color: #9945FF;
+    --secondary-color: #14F195;
+    --accent-color: #FFD700;
+    --bg-dark: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-muted: #888888;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #7c3aed 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #10b981 100%);
+}
+
+.bg-gradient-info {
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #f59e0b 100%);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border-radius: 1rem 1rem 0 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Badges */
+.badge {
+    font-size: 0.85rem;
+    padding: 0.5em 0.8em;
+}
+
+/* Pulse Animation */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Table Styles */
+.table-dark {
+    --bs-table-bg: transparent;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Opportunity Row Styles */
+.opportunity-row {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.opportunity-row.new-opportunity {
+    animation: highlightNew 3s ease-in-out;
+    border-left: 4px solid var(--secondary-color);
+}
+
+@keyframes highlightNew {
+    0% {
+        background-color: rgba(20, 241, 149, 0.3);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.profit-high {
+    color: var(--secondary-color) !important;
+    font-weight: bold;
+}
+
+.profit-medium {
+    color: var(--accent-color) !important;
+    font-weight: 600;
+}
+
+.profit-low {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Status Indicators */
+.status-online {
+    background-color: var(--secondary-color) !important;
+}
+
+.status-offline {
+    background-color: #ef4444 !important;
+}
+
+.status-warning {
+    background-color: var(--accent-color) !important;
+}
+
+/* Activity Feed */
+.activity-item {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.activity-item:hover {
+    border-left-color: var(--secondary-color);
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .card-body h2 {
+        font-size: 1.5rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading States */
+.loading-shimmer {
+    background: linear-gradient(90deg, #2d2d2d 25%, #3d3d3d 50%, #2d2d2d 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Tooltips */
+.tooltip-inner {
+    background-color: var(--bg-dark);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--primary-color);
+}
+
+/* Button Enhancements */
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Connection Status Indicators */
+.connection-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.connection-indicator.online {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 6px var(--secondary-color);
+}
+
+.connection-indicator.offline {
+    background-color: #ef4444;
+    box-shadow: 0 0 6px #ef4444;
+}
+
+/* Number Counter Animation */
+.counter-animate {
+    transition: all 0.5s ease;
+}
+
+/* Profit Percentage Colors */
+.profit-positive {
+    color: var(--secondary-color);
+}
+
+.profit-negative {
+    color: #ef4444;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
